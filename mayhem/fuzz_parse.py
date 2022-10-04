@@ -32,7 +32,7 @@ def TestOneInput(data):
         builder.parseString(str(harness_bytes[2]))
         builder.parseFile(io.BytesIO(harness_bytes[3]))
 
-    except (defusedxml.common.DefusedXmlException):
+    except (defusedxml.common.DefusedXmlException, xml.etree.ElementTree.ParseError):
         pass
 
 
