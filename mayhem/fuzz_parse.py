@@ -5,7 +5,7 @@ import atheris
 import sys
 import io
 
-with atheris.instrument_imports():
+with atheris.instrument_imports(include=['defusedxml', 'xml']):
     import defusedxml.pulldom
     import defusedxml.ElementTree
     import defusedxml.common
