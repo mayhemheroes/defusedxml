@@ -1,16 +1,5 @@
 on:
-  push:
-    branches: 
-      - master
-      - main
-      - v*.x
-  pull_request:
-    branches:
-      - master
-      - main
-      - v*.x
   workflow_dispatch:
-
 jobs:
   tests:
     name: "Python ${{ matrix.python-version }}"

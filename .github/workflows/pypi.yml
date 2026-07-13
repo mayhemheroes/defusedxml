@@ -19,17 +19,6 @@ on:
         description: upload to PyPI
         type: boolean
         default: false
-  push:
-    branches:
-      - master
-      - main
-      - v*.x
-  pull_request:
-    branches:
-      - master
-      - main
-      - v*.x
-
 jobs:
   pypi-build:
     name: Build distribution
