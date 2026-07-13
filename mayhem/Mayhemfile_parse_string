@@ -1,0 +1,12 @@
+# Mayhem target: defusedxml pulldom/minidom/expatbuilder parseString (OSS-Fuzz fuzz_parse_string
+# harness, Atheris/libFuzzer).
+project: defusedxml
+target: fuzz_parse_string
+
+cmds:
+  - cmd: /mayhem/fuzz_parse_string
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_parse_string/testsuite

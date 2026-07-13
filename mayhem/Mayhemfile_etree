@@ -1,0 +1,11 @@
+# Mayhem target: defusedxml.ElementTree.parse (OSS-Fuzz fuzz_etree_parse harness, Atheris/libFuzzer).
+project: defusedxml
+target: fuzz_etree_parse
+
+cmds:
+  - cmd: /mayhem/fuzz_etree_parse
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_etree_parse/testsuite

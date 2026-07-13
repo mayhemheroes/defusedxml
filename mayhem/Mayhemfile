@@ -1,0 +1,15 @@
+# Mayhem target: defusedxml hardened-XML parsers (Atheris/libFuzzer harness).
+# The cmd binary is the compiled ELF launcher that drives mayhem/fuzz_parse.py; Atheris instruments
+# the defusedxml library so the run records coverage (edges). Mirrors the fork's original
+# `parse-fuzz` target (pulldom/ElementTree/expatbuilder parsing of fuzzer-generated XML).
+project: defusedxml
+target: parse-fuzz
+
+cmds:
+  - cmd: /mayhem/parse-fuzz
+    libfuzzer: true
+
+# Seed corpus of representative XML documents (file:// URIs, per the Mayhemfile schema).
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/parse-fuzz/testsuite
